@@ -17,9 +17,16 @@ const server = http.createServer((req, res) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${uuid}</title>
+    <link rel="icon" href="https://fav.val.run/👓" />
+    <link rel="stylesheet" href="https://esm.sh/landsoul" />
+    <script src="https://rayality.val.run/rayality.js" async></script>
+    <script src="https://rayality.val.run/replay.js" async></script>
 </head>
 <body>
-    <a href="${url}" target="_blank">${url}</a>
+  <h1>Speed Test Service</h1>
+    <a href="${url}" target="_blank">
+      <img src="https://api.dub.co/qr?url=${encodeURIComponent(url)}" alt="QR Code" />
+    </a>
 </body>
 </html>`;
   res.end(html);
