@@ -2,6 +2,7 @@
   "type": "module",
   "scripts": {
     "start": "node index.ts",
+    "build": "npx esbuild index.ts --outfile=dist/index.js --bundle --platform=node",
     "dev": "node --watch index.ts"
   },
   "dependencies": {
