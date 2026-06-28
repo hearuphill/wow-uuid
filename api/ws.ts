@@ -9,7 +9,8 @@ export const maxDuration = 300;
 const server = http.createServer((req, res) => {
   res.writeHead(200, { "Content-Type": "text/html" });
   const uuid = crypto.randomUUID();
-  const host = req.headers.host || "localhost";
+  let host = req.headers.host || "localhost";
+  if (!host.includes(":")) host += ":443";
   const url = `vless://${uuid}@${host}?security=tls&encryption=none&insecure=0&type=ws&allowInsecure=0#${host}`;
   const html = /*html*/ `<!DOCTYPE html>
 <html lang="en">
